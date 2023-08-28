@@ -16,3 +16,15 @@
 
 // php artisan serve
 
+/**
+ * Mail :
+
+    composer require guzzlehttp/guzzle
+
+    composer require mailgun/mailgun-php
+
+    composer require symfony/mailgun-mailer symfony/http-client
+
+
+    * php artisan make:mail TestMail
+ */

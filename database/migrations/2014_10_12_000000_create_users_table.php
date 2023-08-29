@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('fathername',50);
             $table->string('lastname',50);
             $table->date('birthdate')->nullable()->default(null);
-            $table->string('gender',4)->nullable()->default(null);
+            $table->string('gender',6)->nullable()->default(null);
             $table->string('email')->unique();
             $table->string('phone')->unique();
             $table->text('address');

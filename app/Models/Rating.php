@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Rating extends Model
 {
     use HasFactory;
+    protected $fillable = [
+
+        'user_id',
+        'doctor_id',
+        'rate_value',
+
+    ];
+
 }

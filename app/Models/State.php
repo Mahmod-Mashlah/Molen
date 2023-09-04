@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class State extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+
+        'user_id',
+        'doctor_id',
+
+        'date',
+        'state',
+        'indications',
+        'personalizing',
+
+
+    ];
 }

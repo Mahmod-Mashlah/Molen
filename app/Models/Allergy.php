@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Allergy extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+
+        'allergy',
+        'date',
+
+        'user_id',
+
+        'doctor_id',
+
+    ];
 }

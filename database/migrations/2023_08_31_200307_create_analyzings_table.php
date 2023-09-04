@@ -13,6 +13,19 @@ return new class extends Migration
     {
         Schema::create('analyzings', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('doctor_id');
+            $table->foreign('doctor_id')->references('user_id')->on('doctors');
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
+
+            $table->string('name',100);
+            $table->text('result');
+            $table->text('naturalizing');
+            $table->date('date');
+
             $table->timestamps();
         });
     }

@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('work_times', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('doctor_id');
+            $table->foreign('doctor_id')->references('user_id')->on('doctors');
+
+            $table->unsignedBigInteger('day_id');
+            $table->foreign('day_id')->references('id')->on('days');
+
+            $table->time('start_time');
+            $table->time('end_time');
             $table->timestamps();
         });
     }

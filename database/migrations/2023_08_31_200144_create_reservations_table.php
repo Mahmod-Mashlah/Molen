@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('doctor_id');
+
+            $table->string('status')->default(null /*or: 'waiting' */)->nullable();
+            $table->time('from');
+            $table->time('to');
+
+
+            // Relations :
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('doctor_id')->references('user_id')->on('doctors')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

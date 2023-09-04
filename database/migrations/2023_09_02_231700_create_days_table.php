@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personalizings', function (Blueprint $table) {
+        Schema::create('days', function (Blueprint $table) {
             $table->id();
-
-           // nothing here
-
+            $table->string('name',10);
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('personalizings');
+        Schema::dropIfExists('days');
     }
 };

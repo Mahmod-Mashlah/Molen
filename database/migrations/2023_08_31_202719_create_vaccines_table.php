@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('vaccines', function (Blueprint $table) {
             $table->id();
+            $table->text('vaccine');
+            $table->date('date')->nullable();
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->timestamps();
         });
     }

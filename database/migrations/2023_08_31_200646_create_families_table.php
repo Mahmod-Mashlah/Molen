@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('families', function (Blueprint $table) {
             $table->id();
+            $table->string('member');
+            $table->text('description');
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
+
             $table->timestamps();
         });
     }

@@ -13,6 +13,22 @@ return new class extends Migration
     {
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('doctor_id');
+            $table->foreign('doctor_id')->references('user_id')->on('doctors');
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
+
+            $table->float('hight');
+            $table->float('width');
+            $table->float('temperature');
+            $table->float('pressure');
+            $table->float('blood_oxygen');
+
+            $table->date('date');
+
             $table->timestamps();
         });
     }

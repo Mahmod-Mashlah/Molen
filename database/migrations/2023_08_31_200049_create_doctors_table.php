@@ -13,7 +13,32 @@ return new class extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
+
+
+            $table->string('specialist_on',255);
+            $table->text('certifactions');
+            $table->text('location')/*->nullable()->default(null)*/;
+
+            $table->string('image')->nullable();
+            $table->date('birthdate')->nullable()->default(null);
+
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->timestamps();
+
+
+
+
+
+
+            // ..................................................................................
+
+
+
+
+
         });
     }
 

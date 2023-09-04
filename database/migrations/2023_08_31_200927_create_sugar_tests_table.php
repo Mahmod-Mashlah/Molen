@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('sugar_tests', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
+            $table->string('result');
+            $table->date('date');
+            $table->time('time');
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
+
             $table->timestamps();
         });
     }

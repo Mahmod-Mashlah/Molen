@@ -15,10 +15,16 @@ class Doctor extends Model
         'certifactions',
         'location',
         'image',
-        'birthdate',
+        // 'birthdate',
 
         'user_id',
     ];
+
+    public function  user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 
     public function allergy()
     {
@@ -98,6 +104,7 @@ class Doctor extends Model
     {
         return $this->hasMany(Vaccine::class);
     }
+
 
 
 }

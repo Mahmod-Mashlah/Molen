@@ -17,7 +17,7 @@ class Doctor extends Model
         'image',
         'birthdate',
 
-        'user_id',a
+        'user_id',
     ];
 
     public function allergy()

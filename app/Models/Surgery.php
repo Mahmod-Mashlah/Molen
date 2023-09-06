@@ -19,4 +19,15 @@ class Surgery extends Model
         'date',
 
     ];
+
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class, 'user_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

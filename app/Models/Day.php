@@ -15,4 +15,9 @@ class Day extends Model
 
     ];
 
+    public function doctors()
+    {
+        return $this->belongsToMany(Doctor::class, 'work_times',);
+    }
+
 }

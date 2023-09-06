@@ -18,4 +18,10 @@ class WorkTime extends Model
         'end_time',
     ];
 
+    /**
+     *
+     * No relations here because
+     * the relation is many to many ,
+     * you can see relation in Day & Doctor Models
+     *  */
 }

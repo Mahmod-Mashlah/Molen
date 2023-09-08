@@ -16,7 +16,7 @@ class DoctorSeeder extends Seeder
     {
 
         // User::factory()->times(10)->create();
-        for ($i=1; $i <= 9 ; $i++) {
+        for ($i=2; $i <= 10 ; $i+=3) {
             Doctor::factory()->create([
 
                 'specialist_on' => 'specialization #'."$i",
@@ -24,7 +24,8 @@ class DoctorSeeder extends Seeder
                 'location' => "Damascus, Airplane Street , Lemon House",
                 'image'  => '2000-03-'.'0'.$i.'.jpg' ,
                 // 'birthdate'     => fake()->randomElement(['2000-05-05','2020-02-02']),
-                'user_id' => User::all()->unique()->random()->id ,
+                'user_id' => $i ,
+                // 'user_id' => User::all()->unique()->random()->id ,
 
             ]);
            }

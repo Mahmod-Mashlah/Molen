@@ -12,6 +12,7 @@ class Family extends Model
     protected $fillable = [
 
         'user_id',
+        'doctor_id',
 
         'member',
         'description',
